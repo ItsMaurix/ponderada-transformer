@@ -35,5 +35,6 @@
 - O tutorial não explica muito bem por que escolher 4 layers, 8 heads, d_model=128, etc. Pra mudar isso sozinho tem que saber o que acontece por trás dos panos e eu senti falta de entender melhor o impacto desses parâmetros.
 
 ### 4. **Limitações Computacionais**
-- O modelo demora muito para treinar, mesmo sendo pequeno e usando a GPU. Vou comentar isso melhor depois
-- O modelo final ainda produz traduções bem básicas
+- O modelo demora muito para treinar, mesmo sendo pequeno, isso nos leva à comparação de CPU vs GPU.
+
+- **CPU vs GPU**: Transformers fazem muitas operações matriciais paralelas (multiplicações de attention), e rodar isso em uma CPU é inviável, pois essas são operações ideais para GPU. Em CPU é impráticavel mesmo para essas três épocas que o tutorial deixou como default. Com com GPU, o tutorial prevê 1 hora, mas a única dispoinível era a T4 lá no Google Colab e, mesmo depois de 1h20 minutos, isso não tinha acabado, então optei por não rodar pela demora.
